@@ -14,7 +14,7 @@ A partir deste cadastro é possível criar um algoritmo de análise para avaliar
   - Aprovação da proposta deve estar composta com valor de limite de crédito sugerido pelo sistema.
   - A Negação deve estar composta pelo motivo da não aprovação.
   - O sistema deve permitir a consulta de aprovação/negação do cliente pelo cpf.
-  - Dados de entrada do formulário: Nome, idade, sexo, estado civil, dependentes, estado, ocupação, renda mensal.
+  - Dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, ocupação, renda mensal.
 
 ### Requisitos
 
@@ -26,6 +26,9 @@ A partir deste cadastro é possível criar um algoritmo de análise para avaliar
 
 
 ### Resultado da Análise  
+
+- Analisando os seguintes dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, ocupação, renda mensal.
+- O algoritmo de análise e tomada de decisão deverá retornar:
 
 | NOME   | IDADE  | SEXO   | ESTADO CIVIL | ESTADO | OCUPAÇÃO  | RENDA R$| RESULTADO ANÁLISE | LIMITE | 
 | ------ | ------ | ------ | ------       | ------ | ------    | ------  | ------            | ------ |        
