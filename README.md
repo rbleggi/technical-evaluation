@@ -11,10 +11,10 @@ A proposta de crédito consiste em um formulário contendo as seguintes informa�
 - sexo
 - estado civil
 - estado
-- ocupação
+- dependentes
 - renda
 
-Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informações de entrada e definir se o cliente foi negado ou se foi aprovado. Além disso, o algoritmo deve informar qual faixa de limite de crédito o cliente se encaixou.
+Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informações de entrada e definir se o cliente foi negado ou se foi aprovado. Além disso, o algoritmo deve informar em qual faixa de limite de crédito o cliente se encaixou.
 
   - O sistema deve realizar a análise do cliente baseado nas informações cadastrais da proposta.
   - O sistema deve gravar o cadastro da proposta no banco de dados.
@@ -36,21 +36,21 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 
 ### Resultado da Análise  
 
-- Analisando os seguintes dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, ocupação, renda mensal.
+- Analisando os seguintes dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, dependentes, renda mensal.
 - O algoritmo de análise e tomada de decisão deverá retornar:
 
-| NOME   | IDADE  | SEXO   | ESTADO CIVIL | ESTADO | OCUPAÇÃO  | RENDA R$| RESULTADO ANÁLISE | LIMITE | 
-| ------ | ------ | ------ | ------       | ------ | ------    | ------  | ------            | ------ |        
-| Lucas	 | 28     | M      | solteiro     |	SC     | autonomo  | 3000    | Aprovado          | entre 1000 - 1500 |
-| Ana	 | 17     | F	   | solteiro     |	SP     | estudante | 500     | Aprovado          | entre 100 - 200   |
-| Pedro	 | 68     | M      | casado	      | SC	   | aposentado| 5000    | Aprovado          | entre 1000 - 1200 |
-| Paula	 | 61     | F      | casado	      | RJ	   | professor | 5000    | Aprovado          | entre 1000 - 1500 |
-| João	 | 56     | M      | divorciado   |	RJ	   | autonomo  | 2000    | Negado            | reprovado política de crédito |	
-| Maria	 | 45     | F      | viuva	      | SP	   | professor | 2000    | Negado            | reprovado política de crédito |
-| José	 | 30     | M      | divorciado   |	MA	   | médico	   | 8000    | Aprovado          | entre 4000 - 5500 |
-| Dinae  | 33     | F      | casado	      | SP	   | médico	   | 10000   | Aprovado          | superior 6000     |
-| Marcos | 19     | M      | solteiro     |	SC	   | estudante | 400     | Negado            | renda baixa       |	
-| Suzan  | 63     | F      | viuva	      | MA	   | aposentado| 1500    | Negado            | renda baixa       |
+| NOME   | IDADE  | SEXO   | ESTADO CIVIL | ESTADO | DEPENDENTES| RENDA R$| RESULTADO ANÁLISE | LIMITE | 
+| ------ | ------ | ------ | ------       | ------ | ------     | ------  | ------            | ------ |        
+| Lucas	 | 28     | M      | solteiro     |	SC     | 0          | 3000    | Aprovado          | entre 1000 - 1500 |
+| Ana	 | 17     | F	   | solteiro     |	SP     | 0          | 500     | Aprovado          | entre 100 - 200   |
+| Pedro	 | 68     | M      | casado	      | SC	   | 4          | 5000    | Aprovado          | entre 1000 - 1200 |
+| Paula	 | 61     | F      | casado	      | RJ	   | 3          | 5000    | Aprovado          | entre 1000 - 1500 |
+| João	 | 56     | M      | divorciado   |	RJ	   | 2          | 2000    | Negado            | reprovado pela política de crédito |	
+| Maria	 | 45     | F      | viuva	      | SP	   | 1          | 2000    | Negado            | reprovado pela política de crédito |
+| José	 | 30     | M      | divorciado   |	MA	   | 2          | 8000    | Aprovado          | entre 4000 - 5500 |
+| Dinae  | 33     | F      | casado	      | SP	   | 1          | 10000   | Aprovado          | superior 6000     |
+| Marcos | 19     | M      | solteiro     |	SC	   | 1          | 400     | Negado            | renda baixa       |	
+| Suzan  | 63     | F      | viuva	      | MA	   | 3          | 1500    | Negado            | reprovado pela política de crédito |
 
 
 ### Arquitetura
