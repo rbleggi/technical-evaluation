@@ -26,12 +26,11 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
   
 ### Sugestão de Tecnologias
 
-  - Frontend: [AngularJS 1.6], [Html5], [Bootstrap]
-  - Backend: [Java], [Spring-boot]
+  - Frontend: [AngularJS], [Html5], [Bootstrap]
+  - Backend: [Java], (Recomendamos [Spring-boot])
   - Integrações: [Rest] conceito Restful
   - Documentação: [Swagger]
-  - Banco de dados: [H2-DB] 
-
+  
 
 ### Resultado da Análise  
 
@@ -59,7 +58,7 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 
   - Frontend/Backend.
   - Backend com conceito de Api contendo documentação swagger dos endpoints.
-  - API para gravação e consulta das propostas.
+  - API para cadastro e consulta das propostas.
   - API motor de crédito que efetuará a análise da proposta e realizará a tomada de decisão do limite de crédito.
   
 ### Desafios
@@ -70,7 +69,7 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 ### Observações 
 
 > A apresentação dos dados no frontend e arquitetura ficam a critério do desenvolvedor.
-> Padrões de projeto, código limpo, melhores práticas, documentação swagger e documentação do código fazem parte do escopo do projeto.
+> Padrões de projeto, código limpo, melhores práticas, testes unitários, padrões Solid, documentação swagger e documentação do código fazem parte do escopo do projeto.
 > A criação do algoritmo de análise de crédito e tomada de decisão é responsabilidade do desenvolvedor. A criatividade será avaliada.  
 > Disponibilizar documentação para execução do sistema.
 > Surpreenda-nos. 
@@ -89,12 +88,11 @@ Calcard Administradora de Cartões
 
 **Boa sorte!**
 
-   [AngularJS 1.6]: <http://angularjs.org>	
+   [AngularJS]: <http://angularjs.org>	
    [Html5]: <https://www.w3.org/TR/html5/>
    [Bootstrap]: <http://getbootstrap.com/>
    [Java]: <http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html>
    [Spring-boot]: <https://projects.spring.io/spring-boot/>
    [Rest]: <https://www.w3.org/2001/sw/wiki/REST>
-   [Swagger]: <https://swagger.io/>
-   [H2-DB]: <http://www.h2database.com/html/main.html>   
+   [Swagger]: <https://swagger.io/>  
    
