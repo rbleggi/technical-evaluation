@@ -4,8 +4,17 @@
 
 Desenvolver uma aplicação web que realize o cadastro de proposta de crédito para um determinado cliente, efetue a análise de dados e efetive a aprovação ou negação de um limite de crédito para o mesmo.
 
-A proposta de crédito consiste em um formulário contendo informações de cadastro de cliente. Ex.: nome, idade, sexo, renda.
-A partir deste cadastro é possível criar um algoritmo de análise para avaliar e decidir um limite de crédito para o cliente cadastrado.
+A proposta de crédito consiste em um formulário contendo as seguintes informações de cadastro de cliente:
+- Nome
+- CPF
+- Idade
+- sexo
+- estado civil
+- estado
+- ocupação
+- renda
+
+Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informações de entrada e definir se o cliente foi negado ou se foi aprovado. Além disso, o algoritmo deve informar qual faixa de limite de crédito o cliente se encaixou.
 
   - O sistema deve realizar a análise do cliente baseado nas informações cadastrais da proposta.
   - O sistema deve gravar o cadastro da proposta no banco de dados.
@@ -14,7 +23,7 @@ A partir deste cadastro é possível criar um algoritmo de análise para avaliar
   - Aprovação da proposta deve estar composta com valor de limite de crédito sugerido pelo sistema.
   - A Negação deve estar composta pelo motivo da não aprovação.
   - O sistema deve permitir a consulta de aprovação/negação do cliente pelo cpf.
-  - Dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, ocupação, renda mensal.
+  - Dados de entrada do formulário: CPF, Nome, idade, sexo, estado civil, estado, ocupação, renda mensal.
 
 ### Requisitos
 
@@ -36,12 +45,12 @@ A partir deste cadastro é possível criar um algoritmo de análise para avaliar
 | Ana	 | 17     | F	   | solteiro     |	SP     | estudante | 500     | Aprovado          | entre 100 - 200   |
 | Pedro	 | 68     | M      | casado	      | SC	   | aposentado| 5000    | Aprovado          | entre 1000 - 1200 |
 | Paula	 | 61     | F      | casado	      | RJ	   | professor | 5000    | Aprovado          | entre 1000 - 1500 |
-| João	 | 56     | M      | divorciado   |	RJ	   | autonomo  | 2000    | Reprovado         ||	
-| Maria	 | 45     | F      | viuva	      | SP	   | professor | 2000    | Reprovado         ||
+| João	 | 56     | M      | divorciado   |	RJ	   | autonomo  | 2000    | Negado            | reprovado política de crédito |	
+| Maria	 | 45     | F      | viuva	      | SP	   | professor | 2000    | Negado            | reprovado política de crédito |
 | José	 | 30     | M      | divorciado   |	MA	   | médico	   | 8000    | Aprovado          | entre 4000 - 5500 |
 | Dinae  | 33     | F      | casado	      | SP	   | médico	   | 10000   | Aprovado          | superior 6000     |
-| Marcos | 19     | M      | solteiro     |	SC	   | estudante | 400     | Reprovado         ||	
-| Suzan  | 63     | F      | viuva	      | MA	   | aposentado| 1500    | Reprovado         ||
+| Marcos | 19     | M      | solteiro     |	SC	   | estudante | 400     | Negado            | renda baixa       |	
+| Suzan  | 63     | F      | viuva	      | MA	   | aposentado| 1500    | Negado            | renda baixa       |
 
 
 ### Arquitetura
