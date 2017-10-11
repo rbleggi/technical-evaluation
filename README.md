@@ -36,7 +36,7 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 ### Resultado da Análise  
 
 - Analisando os seguintes dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, dependentes, renda mensal.
-- Espera-se que o algoritmo de análise e tomada de decisão retorne os seguintes resultado:
+- Espera-se que o algoritmo de análise e tomada de decisão retorne os seguintes resultados:
 
 | NOME   | IDADE  | SEXO   | ESTADO CIVIL | ESTADO | DEPENDENTES| RENDA R$| RESULTADO ANÁLISE | LIMITE | 
 | ------ | ------ | ------ | ------       | ------ | ------     | ------  | ------            | ------ |        
@@ -78,7 +78,7 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 ### Publicação
 
 O projeto deve estar documentado e publicado no github.
-Favor nos enviar o endereço do repositório do projeto para o e-mail: rodrigo.oliveira@calcard.com.br; diego.nunes@calcard.com.br;
+Favor nos enviar o endereço do repositório do projeto para o(s) e-mail(s): rodrigo.oliveira@calcard.com.br; diego.nunes@calcard.com.br;
 
 
 License
