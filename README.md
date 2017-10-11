@@ -25,7 +25,7 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
   - O sistema deve permitir a consulta de aprovação/negação do cliente pelo cpf.
   - Dados de entrada do formulário: CPF, Nome, idade, sexo, estado civil, estado, ocupação, renda mensal.
 
-### Requisitos
+### Sugestão de Tecnologias
 
   - Frontend: [AngularJS 1.6], [Html5], [Bootstrap]
   - Backend: [Java], [Spring-boot]
@@ -34,26 +34,29 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
   - Banco de dados: [H2-DB] 
 
 
-### Resultado da Análise  
+### Resultado esperado pela Análise  
 
 - Analisando os seguintes dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, dependentes, renda mensal.
 - O algoritmo de análise e tomada de decisão deverá retornar:
 
 | NOME   | IDADE  | SEXO   | ESTADO CIVIL | ESTADO | DEPENDENTES| RENDA R$| RESULTADO ANÁLISE | LIMITE | 
 | ------ | ------ | ------ | ------       | ------ | ------     | ------  | ------            | ------ |        
-| Lucas	 | 28     | M      | solteiro     |	SC     | 0          | 3000    | Aprovado          | entre 1000 - 1500 |
-| Ana	 | 17     | F	   | solteiro     |	SP     | 0          | 500     | Aprovado          | entre 100 - 200   |
-| Pedro	 | 68     | M      | casado	      | SC	   | 4          | 5000    | Aprovado          | entre 1000 - 1200 |
+| Lucas	 | 28     | M      | solteiro     |	SC     | 0          | 2500    | Aprovado          | entre 500 - 1000  |
+| Ana	 | 17     | F	   | solteiro     |	SP     | 0          | 1000    | Aprovado          | entre 100 - 500   |
+| Pedro	 | 68     | M      | casado	      | SC	   | 3          | 8000    | Aprovado          | entre 1500 - 2000 |
 | Paula	 | 61     | F      | casado	      | RJ	   | 3          | 5000    | Aprovado          | entre 1000 - 1500 |
 | João	 | 56     | M      | divorciado   |	RJ	   | 2          | 2000    | Negado            | reprovado pela política de crédito |	
-| Maria	 | 45     | F      | viuva	      | SP	   | 1          | 2000    | Negado            | reprovado pela política de crédito |
-| José	 | 30     | M      | divorciado   |	MA	   | 2          | 8000    | Aprovado          | entre 4000 - 5500 |
-| Dinae  | 33     | F      | casado	      | SP	   | 1          | 10000   | Aprovado          | superior 6000     |
+| Maria	 | 45     | F      | divorciado   | SP	   | 1          | 2000    | Negado            | reprovado pela política de crédito |
+| José	 | 30     | M      | casado       |	MA	   | 2          | 8000    | Aprovado          | superior 2000     |
+| Dinae  | 33     | F      | casado	      | SP	   | 1          | 10000   | Aprovado          | superior 2000     |
 | Marcos | 19     | M      | solteiro     |	SC	   | 1          | 400     | Negado            | renda baixa       |	
 | Suzan  | 63     | F      | viuva	      | MA	   | 3          | 1500    | Negado            | reprovado pela política de crédito |
+| Luci   | 28     | F      | solteiro     | SC     | 2          | 2500    | Aprovado          | entre 100 - 500   |
+| Roberto| 16     | M      | solteiro     | SP     | 0          | 500     | Negado            | renda baixa       |
+| Bruno  | 30     | M      | casado       | MA     | 5          | 8000    | Aprovado          | entre 1000 - 1500 |
+| Ariel  | 33     | F      | viuva        | SP     | 0          | 10000   | Aprovado          | superior 2000     |      
 
-
-### Arquitetura
+### Sugestão de Arquitetura 
 
   - Frontend/Backend.
   - Backend com conceito de Api contendo documentação swagger dos endpoints.
@@ -71,7 +74,7 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 
 ### Observações 
 
-> A apresentação dos dados no frontend é livre.
+> A apresentação dos dados no frontend, arquitetura e tecnologias ficam a critério do desenvolvedor.
 > Padrões de projeto, código limpo, melhores práticas, documentação swagger e documentação do código fazem parte do escopo do projeto.
 > A criação do algoritmo de análise de crédito e tomada de decisão é responsabilidade do desenvolvedor. A criatividade será avaliada.  
 > Disponibilizar documentação para execução do sistema.
