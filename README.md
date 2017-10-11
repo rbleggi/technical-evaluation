@@ -1,6 +1,6 @@
 # Avaliação Técnica
 
-[![drawing](https://i1.wp.com/novidadesdetudo.com.br/wp-content/uploads/2015/09/SOLICITAR-CART%C3%83O-CALCARD.png?fit=347%2C222)](http://www.calcard.com.br/)
+[![drawing](https://sitegabriela.conductor.com.br/App_Themes/8/Images/Logos/BannerSite.png)](http://www.calcard.com.br/)
 
 Desenvolver uma aplicação web que realize o cadastro de proposta de crédito para um determinado cliente, efetue a análise de dados e efetive a aprovação ou negação de um limite de crédito para o mesmo.
 
