@@ -14,34 +14,33 @@ A partir deste cadastro é possível criar um algoritmo de análise para avaliar
   - Aprovação da proposta deve estar composta com valor de limite de crédito sugerido pelo sistema.
   - A Negação deve estar composta pelo motivo da não aprovação.
   - O sistema deve permitir a consulta de aprovação/negação do cliente pelo cpf.
-
-### Requisitos
-
-#####Dados de Entrada
   - Dados de entrada do formulário: Nome, idade, sexo, estado civil, dependentes, estado, ocupação, renda mensal.
 
-#####Resultado da Análise  
-| NOME   | IDADE  | SEXO   | ESTADO CIVIL | DEPENDENTES | ESTADO | OCUPAÇÃO  | RENDA  | | ANÁLISE   | LIMITE | 
-| ------ | ------ | ------ | ------       | ------      | ------ | ------    | ------ |-| ------    | ------ |        
-| Lucas	 | 28     | M      | solteiro     |	0	        | SC	 | autonomo	 | 3000   |	| Aprovado  | entre 1000 - 1500 |
-| Ana	 | 17     | F	   | solteiro     |	0	        | SP	 | estudante | 500    |	| Aprovado  | entre 100 - 200   |
-| Pedro	 | 68     | M      | casado	      | 4	        | SC	 | aposentado| 5000   |	| Aprovado  | entre 1000 - 1200 |
-| Paula	 | 61     | F      | casado	      | 3	        | RJ	 | professor | 5000   |	| Aprovado  | entre 1000 - 1500 |
-| João	 | 56     | M      | divorciado   |	2	        | RJ	 | autonomo	 | 2000   |	| Reprovado ||	
-| Maria	 | 45     | F      | viuva	      | 1	        | SP	 | professor | 2000   |	| Reprovado	||
-| José	 | 30     | M      | divorciado   |	2	        | MA	 | médico	 | 8000   |	| Aprovado  | entre 4000 - 5500 |
-| Dinae  | 33     | F      | casado	      | 1	        | SP	 | médico	 | 10000  |	| Aprovado  | superior 6000     |
-| Marcos | 19     | M      | solteiro     |	1	        | SC	 | estudante | 400    |	| Reprovado ||	
-| Suzan  | 63     | F      | viuva	      | 3	        | MA	 | aposentado| 1500   |	| Reprovado	||
-
-####Tecnologias
+### Requisitos
 
   - Frontend: [AngularJS 1.6], [Html5], [Bootstrap]
   - Backend: [Java], [Spring-boot]
   - Integrações: [Rest] conceito Restful
   - Documentação: [Swagger]
   - Banco de dados: [H2-DB] 
-  
+
+
+### Resultado da Análise  
+
+| NOME   | IDADE  | SEXO   | ESTADO CIVIL | DEPENDENTES | ESTADO | OCUPAÇÃO  | RENDA  |        | ANÁLISE   | LIMITE | 
+| ------ | ------ | ------ | ------       | ------      | ------ | ------    | ------ | ------ | ------    | ------ |        
+| Lucas	 | 28     | M      | solteiro     |	0	        | SC	 | autonomo	 | 3000   |	       | Aprovado  | entre 1000 - 1500 |
+| Ana	 | 17     | F	   | solteiro     |	0	        | SP	 | estudante | 500    |	       | Aprovado  | entre 100 - 200   |
+| Pedro	 | 68     | M      | casado	      | 4	        | SC	 | aposentado| 5000   |	       | Aprovado  | entre 1000 - 1200 |
+| Paula	 | 61     | F      | casado	      | 3	        | RJ	 | professor | 5000   |	       | Aprovado  | entre 1000 - 1500 |
+| João	 | 56     | M      | divorciado   |	2	        | RJ	 | autonomo	 | 2000   |	       | Reprovado ||	
+| Maria	 | 45     | F      | viuva	      | 1	        | SP	 | professor | 2000   |	       | Reprovado ||
+| José	 | 30     | M      | divorciado   |	2	        | MA	 | médico	 | 8000   |	       | Aprovado  | entre 4000 - 5500 |
+| Dinae  | 33     | F      | casado	      | 1	        | SP	 | médico	 | 10000  |	       | Aprovado  | superior 6000     |
+| Marcos | 19     | M      | solteiro     |	1	        | SC	 | estudante | 400    |	       | Reprovado ||	
+| Suzan  | 63     | F      | viuva	      | 3	        | MA	 | aposentado| 1500   |	       | Reprovado ||
+
+
 ### Arquitetura
 
   - Frontend/Backend.
