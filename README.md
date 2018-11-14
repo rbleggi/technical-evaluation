@@ -77,7 +77,7 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 ### Publicação
 
 O projeto deve estar documentado e publicado no github.
-Favor nos enviar o endereço do repositório do projeto para o(s) e-mail(s): rodrigo.oliveira@calcard.com.br; diego.nunes@calcard.com.br;
+Favor nos enviar o endereço do repositório do projeto para o(s) e-mail(s): ramon.felipe@calcard.com.br; diego.nunes@calcard.com.br;
 
 
 License
