@@ -34,6 +34,8 @@ Deve ser criado um algoritmo de análise de crédito, que vai avaliar as informa
 
 ### Resultado da Análise  
 
+- O seu melhor já é o suficiente: Ainda que seu código tenha problemas, consideraremos o esforço e os pontos positivos. :)
+
 - Analisando os seguintes dados de entrada do formulário: Nome, idade, sexo, estado civil, estado, dependentes, renda mensal.
 - Espera-se que o algoritmo de análise e tomada de decisão retorne os seguintes resultados:
 
