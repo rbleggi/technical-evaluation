@@ -1,3 +1,28 @@
+#Instruções para execução
+
+Caso não tenha a variavel de ambiente JAVA_HOME setada na maquina, editar o arquivo "setJAVA_HOME.bat" e alterar a seguinte instrução
+set PATH_JAVA_HOME=JDKDIR ex.: 
+set PATH_JAVA_HOME=C:\Program Files\Java\jdk1.8.0_181
+Após executar o arquivo com permissão de administrador
+
+Caso não tenha a variavel de ambiente MAVEN_HOME setada na maquina, editar o arquivo "setMAVEN_HOME.bat" e alterar a seguinte instrução
+set PATH_MAVEN_HOME=MAVENDIR 
+ex.: set PATH_MAVEN_HOME=C:\Users\Roger\Downloads\apache-maven-3.5.4
+Após executar o arquivo com permissão de administrador
+
+Para rodar o programa siga alguma das opções
+1 - Executar o arquivo runServer.bat
+2 - Dentro do Eclipse, clicar no botão direito no arquivo AvaliacaoApplication.java e após clicar em "Run As" -> "Java Application"
+3 - Executar via cmd o comando mvn spring-boot:run
+
+
+Para rodar os testes siga alguma das opções
+1 - Clicar no botão direito no diretório src/test/java e após clicar em "Run As" -> "JUnit Test"
+
+##Observações
+Foi utilizado a biblioteca SpringFox para gerar o Swagger da aplicação.
+Documentação do SpringFox -> http://springfox.github.io/springfox/
+
 # Avaliação Técnica
 
 [![drawing](https://sitegabriela.conductor.com.br/App_Themes/8/Images/Logos/BannerSite.png)](http://www.calcard.com.br/)
