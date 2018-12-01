@@ -1,0 +1,23 @@
+@font-face {
+  @include font-import('Roboto', 700, normal, roboto-bold-normal);
+}
+
+@font-face {
+  @include font-import('Roboto', 400, normal, roboto-regular-normal);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  background-image: url(strip-hyphen('string-com-hifen'));
+  font-size: 62.5%;
+}

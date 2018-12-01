@@ -1,0 +1,31 @@
+/// Font stack padrão da aplicação.
+/// @type List
+$font-stack: ('Roboto', sans-serif) !default;
+
+/// Path dos assets da aplicação.
+/// @type String
+$assets-path: '../assets/' !default;
+
+/// Cor branca padrão.
+/// @type Color
+$color-white: #fff !default;
+
+/// Cor preta padrão.
+/// @type Color
+$color-black: #000 !default;
+
+/// Cor primária.
+/// @type Color
+$color-primary: #000 !default;
+
+/// Cor secundária.
+/// @type Color
+$color-secondary: #bfbfbf !default;
+
+/// Cor cinza escura 1.
+/// @type Color
+$color-grey-dark-1: #666 !default;
+
+/// Cor cinza clara 1.
+/// @type Color
+$color-grey-light-1: #999 !default;

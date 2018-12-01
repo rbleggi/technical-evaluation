@@ -1,0 +1,4 @@
+/src/**/*.css
+/sassdoc
+/dist
+/node_modules

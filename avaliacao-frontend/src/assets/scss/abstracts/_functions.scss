@@ -1,0 +1,19 @@
+/// Remove qualquer hífen de uma string e a concatena.
+/// @param {String} $string - String com hífen
+/// @return {String} - String sem hífen
+/// @example scss - Resultado da função strip-hyphen:
+///   .class {
+///     background-image: url(strip-hyphen('string-com-hifen'));
+///   }
+///
+///   .class {
+///     background-image: url('stringcomhifen');
+///   }
+@function strip-hyphen($string) {
+  $string: str-slice($string, 1, str-index($string, '-') - 1) +
+    str-replace(str-slice($string, str-index($string, '-') + str-length('-')),
+    '-',
+    '');
+
+  @return $string;
+}

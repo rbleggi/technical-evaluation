@@ -1,0 +1,49 @@
+/// Define uma @fonte-face.
+/// @param {String} $family - Família da fonte a ser importada
+/// @param {Number} $weight - Peso da fonte a ser importada
+/// @param {String} $style - Estilo da fonte a ser importada
+/// @param {String} $file - A string deve corresponder ao nome do arquivo a ser importado
+/// @require $assets-path
+/// @example scss - Resultado do import do mixin font-import:
+///   @include font-import('Roboto', 700, normal, roboto-bold-normal);
+///
+///   @font-face {
+///     font-family: "Roboto";
+///     font-weight: 700;
+///     font-style: normal;
+///     src: url("../assets/roboto-bold-normal.eot");
+///     src: url("../assets/roboto-bold-normal.eot?#iefix") format("embedded-opentype"),
+///         url("../assets/roboto-bold-normal.woff2") format("woff2"),
+///         url("../assets/roboto-bold-normal.woff") format("woff"),
+///         url("../assets/roboto-bold-normal.ttf") format("truetype"),
+///         url("../assets/roboto-bold-normal.svg#robotoboldnormal") format("svg");
+///   }
+@mixin font-import($family, $weight, $style, $file) {
+  font-family: '#{$family}';
+  font-weight: $weight;
+  font-style: $style;
+  src: url('#{$assets-path}#{$file}-#{$style}.eot');
+  src: url('#{$assets-path}#{$file}-#{$style}.eot?#iefix')
+    format('embedded-opentype'),
+    url('#{$assets-path}#{$file}-#{$style}.woff2') format('woff2'),
+    url('#{$assets-path}#{$file}-#{$style}.woff') format('woff'),
+    url('#{$assets-path}#{$file}-#{$style}.ttf') format('truetype'),
+    url('#{$assets-path}#{$file}-#{$style}.svg##{strip-hyphen(#{$file}-#{$style})}')
+    format('svg');
+}
+
+/// Define um elemento com posicionamento absoluto e o centraliza horizontalmente e verticalmente.
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/// Reseta o mixin abs-center.
+@mixin abs-center-reset {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+}

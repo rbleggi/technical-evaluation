@@ -1,20 +1,64 @@
-#Instruções para execução
+# Avaliação Projeto Spring Boot
+
+Breve Descrição.
+
+## Índice
+
+- **[Instruções para execução](#instruções-para-execução)**
+- **[Avaliação Técnica](#avaliação-técnica)**
+
+## Instruções para execução
 
 Caso não tenha a variavel de ambiente JAVA_HOME setada na maquina, editar o arquivo "setJAVA_HOME.bat" e alterar a seguinte instrução
 set PATH_JAVA_HOME=JDKDIR ex.: 
 set PATH_JAVA_HOME=C:\Program Files\Java\jdk1.8.0_181
 Após executar o arquivo com permissão de administrador
 
-Caso não tenha a variavel de ambiente MAVEN_HOME setada na maquina, editar o arquivo "setMAVEN_HOME.bat" e alterar a seguinte instrução
-set PATH_MAVEN_HOME=MAVENDIR 
-ex.: set PATH_MAVEN_HOME=C:\Users\Roger\Downloads\apache-maven-3.5.4
-Após executar o arquivo com permissão de administrador
-
 Para rodar o programa siga alguma das opções
-1 - Executar o arquivo runServer.bat
-2 - Dentro do Eclipse, clicar no botão direito no arquivo AvaliacaoApplication.java e após clicar em "Run As" -> "Java Application"
-3 - Executar via cmd o comando mvn spring-boot:run
 
+Docker (Necessário Docker instaldo na maquina)
+- 1 - Executar o arquivo runAvaliacaoDocker.bat
+
+Ou rodar os seguintes comandos via prompt de comando ()
+
+mvnw clean package
+docker build -t avaliacao-backend avaliacao-backend/.
+docker build -t avaliacao-frontend avaliacao-frontend/.
+docker run -d --name avaliacao-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=avaliacao postgres:9.4.5
+docker run -d -p 8080:8080 --name avaliacao-backend --link avaliacao-db:avaliacao-db avaliacao-backend
+docker run --name avaliacao-frontend -p 8082:80 --link avaliacao-backend:avaliacao-backend -d avaliacao-frontend
+
+
+
+BackEnd
+
+
+
+- 1 - Executar o arquivo runBackEnd.bat para rodar o servidor rest
+- 2 - Executar via cmd o comando ``mvn spring-boot:run`` para rodar o servidor rest
+
+
+
+- 2 - Executar o arquivo runFrontEnd.bat para rodar o cliente angularjs
+Ou
+- 3 - Dentro do Eclipse, clicar no botão direito no arquivo ``AvaliacaoApplication.java`` e após clicar em ``"Run As" -> "Java Application"``
+
+- 4 - Executar via cmd o comando ``npm install`` e após ``npm start`` para rodar o cliente angularjs
+- 5 - Docker
+
+# Build projeto
+mvnw clean package
+
+# Build imagens
+docker build -t avaliacao-backend avaliacao-backend/.
+docker build -t avaliacao-frontend avaliacao-frontend/.
+
+# Rodar containers
+docker run -d --name avaliacao-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=avaliacao postgres:9.4.5
+docker run -d -p 8080:8080 --name avaliacao-backend --link avaliacao-db:avaliacao-db avaliacao-backend
+docker run --name avaliacao-frontend -p 8082:80 --link avaliacao-backend:avaliacao-backend -d avaliacao-frontend
+
+# Rodar docker-compose para build e run
 
 Para rodar os testes siga alguma das opções
 1 - Clicar no botão direito no diretório src/test/java e após clicar em "Run As" -> "JUnit Test"
@@ -23,7 +67,7 @@ Para rodar os testes siga alguma das opções
 Foi utilizado a biblioteca SpringFox para gerar o Swagger da aplicação.
 Documentação do SpringFox -> http://springfox.github.io/springfox/
 
-# Avaliação Técnica
+## Avaliação Técnica
 
 [![drawing](https://sitegabriela.conductor.com.br/App_Themes/8/Images/Logos/BannerSite.png)](http://www.calcard.com.br/)
 

@@ -1,0 +1,14 @@
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (1,'Ariel','123',33,'F','VIUVA','SP',0,10000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (2,'Dinae','456',33,'F','CASADO','SP',1,10000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (3,'José','789',30,'M','CASADO','MA',2,8000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (4,'Pedro','012',68,'M','CASADO','SC',3,8000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (5,'Bruno','345',30,'M','CASADO','MA',5,8000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (6,'Paula','678',61,'F','CASADO','RJ',3,5000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (7,'Lucas','901',28,'M','SOLTEIRO','SC',0,2500);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (8,'Luci','234',28,'F','SOLTEIRO','SC',2,2500);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (9,'Maria','567',45,'F','DIVORCIADO','SP',1,2000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (10,'João','890',56,'M','DIVORCIADO','RJ',2,2000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (11,'Suzan','098',63,'F','VIUVA','MA',3,1500);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (12,'Ana','765',17,'F','SOLTEIRO','SP',0,1000);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (13,'Roberto','432',16,'M','SOLTEIRO','SP',0,500);
+INSERT INTO cliente (id, nome, cpf, idade, sexo, estado_civil, estado, qtd_Dependentes, renda) VALUES (14,'Marcos','109',19,'M','SOLTEIRO','SC',1,400);

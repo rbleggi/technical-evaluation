@@ -1,0 +1,20 @@
+version: '2'
+services:
+  avaliacao-frontend:
+    build: avaliacao-frontend/.
+    ports:
+      - "80:80"
+    depends_on:
+      - avaliacao-backend
+  avaliacao-backend:
+    build: avaliacao-backend/.
+    ports:
+      - "8080:8080"
+    depends_on:
+      - avaliacao-db
+  avaliacao-db:
+    image: postgres:9.4.5
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: avaliacao

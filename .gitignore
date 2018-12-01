@@ -1,4 +1,12 @@
-/target/
 .classpath
 .project
 /.settings/
+/bin/
+/avaliacao-frontend/node_modules/
+/avaliacao-frontend/.settings/
+/avaliacao-frontend/target/
+/avaliacao-frontend/dist/
+/avaliacao-frontend/sassdoc/
+/node/
+/avaliacao-backend/target/
+/avaliacao-backend/.settings/

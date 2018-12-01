@@ -1,0 +1,13 @@
+server:
+    port: 8080
+
+spring:
+    profiles:
+        active: dev
+    datasource:
+        dataSourceClassName: org.h2.Driver
+        url: jdbc:h2:mem:testdb
+        username: sa
+        password: 
+
+naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
