@@ -1,20 +1,20 @@
 version: '2'
 services:
-  avaliacao-frontend:
-    build: avaliacao-frontend/.
+  calcard-frontend:
+    build: calcard-frontend/.
     ports:
       - "80:80"
     depends_on:
-      - avaliacao-backend
-  avaliacao-backend:
-    build: avaliacao-backend/.
+      - calcard-backend
+  calcard-backend:
+    build: calcard-backend/.
     ports:
       - "8080:8080"
     depends_on:
-      - avaliacao-db
-  avaliacao-db:
+      - calcard-db
+  calcard-db:
     image: postgres:9.4.5
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: avaliacao
+      POSTGRES_DB: calcard

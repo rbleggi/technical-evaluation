@@ -1,0 +1,23 @@
+server:
+    port: 8080
+
+spring:
+    profiles:
+        active: dev
+    datasource:
+        dataSourceClassName: org.postgresql.Driver
+        platform: postgres
+        url: jdbc:postgresql://calcard-db:5432/calcard
+        username: postgres
+        password: postgres
+    jpa:
+        properties:
+            jdbc:
+                lob:
+                    non_contextual_creation: true 
+            hibernate:
+                temp:
+                    use_jdbc_metadata_defaults: false
+        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
+naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy

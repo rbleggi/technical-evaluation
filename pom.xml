@@ -5,16 +5,16 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.com.rogerbleggi.k2</groupId>
-	<artifactId>avaliacao-projeto</artifactId>
+	<groupId>br.com.rogerbleggi.calcard</groupId>
+	<artifactId>calcard</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	<name>Avaliacao-Projeto</name>
-	<description>Projeto</description>
+	<name>Calcard</name>
+	<description>Calcard</description>
 
 	<modules>
-		<module>avaliacao-backend</module>
-		<module>avaliacao-frontend</module>
+		<module>calcard-backend</module>
+		<module>calcard-frontend</module>
 	</modules>
 
 	<properties>

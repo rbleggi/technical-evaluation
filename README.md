@@ -17,16 +17,16 @@ Após executar o arquivo com permissão de administrador
 Para rodar o programa siga alguma das opções
 
 Docker (Necessário Docker instaldo na maquina)
-- 1 - Executar o arquivo runAvaliacaoDocker.bat
+- 1 - Executar o arquivo runCalcardDocker.bat
 
 Ou rodar os seguintes comandos via prompt de comando ()
 
 mvnw clean package
-docker build -t avaliacao-backend avaliacao-backend/.
-docker build -t avaliacao-frontend avaliacao-frontend/.
-docker run -d --name avaliacao-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=avaliacao postgres:9.4.5
-docker run -d -p 8080:8080 --name avaliacao-backend --link avaliacao-db:avaliacao-db avaliacao-backend
-docker run --name avaliacao-frontend -p 8082:80 --link avaliacao-backend:avaliacao-backend -d avaliacao-frontend
+docker build -t calcard-backend calcard-backend/.
+docker build -t calcard-frontend calcard-frontend/.
+docker run -d --name calcard-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=calcard postgres:9.4.5
+docker run -d -p 8080:8080 --name calcard-backend --link calcard-db:calcard-db calcard-backend
+docker run --name calcard-frontend -p 8082:80 --link calcard-backend:calcard-backend -d calcard-frontend
 
 
 
@@ -41,7 +41,7 @@ BackEnd
 
 - 2 - Executar o arquivo runFrontEnd.bat para rodar o cliente angularjs
 Ou
-- 3 - Dentro do Eclipse, clicar no botão direito no arquivo ``AvaliacaoApplication.java`` e após clicar em ``"Run As" -> "Java Application"``
+- 3 - Dentro do Eclipse, clicar no botão direito no arquivo ``CalcardApplication.java`` e após clicar em ``"Run As" -> "Java Application"``
 
 - 4 - Executar via cmd o comando ``npm install`` e após ``npm start`` para rodar o cliente angularjs
 - 5 - Docker
@@ -50,13 +50,13 @@ Ou
 mvnw clean package
 
 # Build imagens
-docker build -t avaliacao-backend avaliacao-backend/.
-docker build -t avaliacao-frontend avaliacao-frontend/.
+docker build -t calcard-backend calcard-backend/.
+docker build -t calcard-frontend calcard-frontend/.
 
 # Rodar containers
-docker run -d --name avaliacao-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=avaliacao postgres:9.4.5
-docker run -d -p 8080:8080 --name avaliacao-backend --link avaliacao-db:avaliacao-db avaliacao-backend
-docker run --name avaliacao-frontend -p 8082:80 --link avaliacao-backend:avaliacao-backend -d avaliacao-frontend
+docker run -d --name calcard-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=calcard postgres:9.4.5
+docker run -d -p 8080:8080 --name calcard-backend --link calcard-db:calcard-db calcard-backend
+docker run --name calcard-frontend -p 8082:80 --link calcard-backend:calcard-backend -d calcard-frontend
 
 # Rodar docker-compose para build e run
 
