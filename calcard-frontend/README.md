@@ -1,7 +1,5 @@
 # Calcard
 
-Breve Descrição.
-
 ## Índice
 
 - **[Metodologias](#metodologias)**
