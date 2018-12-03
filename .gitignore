@@ -7,6 +7,7 @@
 /calcard-frontend/target/
 /calcard-frontend/dist/
 /calcard-frontend/sassdoc/
+/calcard-frontend/.vscode/
 /node/
 /calcard-backend/target/
 /calcard-backend/.settings/

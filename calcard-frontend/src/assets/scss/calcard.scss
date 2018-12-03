@@ -7,12 +7,19 @@
 @import 'vendors/bootstrap/custom-bootstrap';
 
 // base
-@import 'base/base', 'base/typography', 'base/utilities';
+@import 'base/animations', 'base/base', 'base/typography', 'base/utilities';
 
 // layout
+@import 'layout/calcard-container';
 
 // components
+@import 'components/calcard-btn';
+@import 'components/calcard-form';
+@import '../../components/calcard-footer/calcard-footer.component';
+@import '../../components/calcard-header/calcard-header.component';
 
 // pages
+@import '../../views/cadastro/cadastro.component';
+@import '../../views/home/home.component';
 
 // themes

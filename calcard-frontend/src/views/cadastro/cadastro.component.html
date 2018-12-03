@@ -1,0 +1,133 @@
+<section class="cadastro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+
+        <h1>Cadastrar</h1>
+
+        <form class="calcard-form" name="cadastro" novalidate>
+          <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input id="nome" class="form-control" type="text" aria-describedby="nomeHelp" name="nome" required="true"
+              ng-model="cliente.nome">
+            <div ng-show="cadastro.$submitted || cadastro.nome.$touched">
+              <small id="nomeHelp" class="form-text" ng-show="cadastro.nome.$error.required">
+                Campo Obrigatório.
+              </small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cpf">Digite seu CPF:</label>
+            <input id="cpf" class="form-control" type="text" aria-describedby="cpfHelp" name="cpf" required="true"
+              ng-model="cliente.cpf" ui-br-cpf-mask>
+            <div ng-show="cadastro.$submitted || cadastro.cpf.$touched">
+              <small id="cpfHelp" class="form-text" ng-show="cadastro.cpf.$error.required">
+                CPF Inválido.
+              </small>
+            </div>
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Sexo:</legend>
+            <div class="custom-control custom-radio">
+              <input id="masculino" class="custom-control-input" type="radio" name="sexo" value="M" ng-model="cliente.sexo">
+              <label class="custom-control-label" for="masculino">
+                Masculino
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="feminino" class="custom-control-input" type="radio" name="sexo" value="F" ng-model="cliente.sexo">
+              <label class="custom-control-label" for="feminino">
+                Feminino
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <select id="estado" class="form-control" name="estado" ng-model="cliente.estado">
+              <option value="AC">AC</option>
+              <option value="AL">AL</option>
+              <option value="AP">AP</option>
+              <option value="AM">AM</option>
+              <option value="BA">BA</option>
+              <option value="CE">CE</option>
+              <option value="DF">DF</option>
+              <option value="ES">ES</option>
+              <option value="GO">GO</option>
+              <option value="MA">MA</option>
+              <option value="MT">MT</option>
+              <option value="MS">MS</option>
+              <option value="MG">MG</option>
+              <option value="PA">PA</option>
+              <option value="PB">PB</option>
+              <option value="PR">PR</option>
+              <option value="PE">PE</option>
+              <option value="PI">PI</option>
+              <option value="RJ">RJ</option>
+              <option value="RN">RN</option>
+              <option value="RS">RS</option>
+              <option value="RO">RO</option>
+              <option value="RR">RR</option>
+              <option value="SC">SC</option>
+              <option value="SP">SP</option>
+              <option value="SE">SE</option>
+              <option value="TO">TO</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="estadoCivil">Estado Cívil:</label>
+            <select id="estadoCivil" class="form-control" name="estadoCivil" required="true" ng-model="cliente.estadoCivil">
+              <option selected="selected"></option>
+              <option value="SOLTEIRO">Solteiro(a)</option>
+              <option value="CASADO">Casado(a)</option>
+              <option value="VIUVA">Viúvo(a)</option>
+              <option value="DIVORCIADO">Divorciado(a)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="renda">Renda:</label>
+            <input id="renda" class="form-control" aria-describedby="rendaHelp" name="renda" required="true" ng-model="cliente.renda"
+              ui-money-mask>
+            <div ng-show="cadastro.$submitted || cadastro.renda.$touched">
+              <small id="rendaHelp" class="form-text" ng-show="cadastro.renda.$error.required">
+                Campo Obrigatório.
+              </small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dependentes">Número de Dependentes:</label>
+            <input id="dependentes" class="form-control" type="number" aria-describedby="dependentesHelp" name="dependentes"
+              required="true" ng-model="cliente.dependentes">
+            <div ng-show="cadastro.$submitted || cadastro.dependentes.$touched">
+              <small id="dependentesHelp" class="form-text" ng-show="cadastro.dependentes.$error.required">
+                Campo Obrigatório.
+              </small>
+            </div>
+          </div>
+
+          <div class="text-right">
+            <button class="btn calcard-btn" type="submit" disabled="disabled" ng-click="vm.submit(cliente)" ng-disabled="cadastro.$invalid">
+              Submit
+            </button>
+          </div>
+        </form>
+
+        <div class="alert alert-success" role="alert" ng-if="vm.data.analise == 'APROVADO'">
+          <h2>Parabéns! seu limite de crédito foi aprovado.</h2>
+          <h3>Seu Limite é: {{vm.data.limite}} </h3>
+        </div>
+
+        <div class="alert alert-danger" role="alert" ng-if="vm.data.analise == 'NEGADO'">
+          <h2>Que pena... seu limite de crédito foi negado.</h2>
+          <h3>{{vm.data.limite}}</h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

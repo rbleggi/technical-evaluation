@@ -1,5 +1,8 @@
 package br.com.rogerbleggi.calcard.service.impl;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -14,6 +17,7 @@ import br.com.rogerbleggi.calcard.model.EnumEstadoCivil;
 import br.com.rogerbleggi.calcard.model.Proposta;
 import br.com.rogerbleggi.calcard.repository.PropostaRepository;
 import br.com.rogerbleggi.calcard.service.AnaliseCreditoService;
+import br.com.rogerbleggi.calcard.service.ClienteService;
 import br.com.rogerbleggi.calcard.service.dto.ClienteDTO;
 import br.com.rogerbleggi.calcard.service.dto.PropostaDTO;
 import br.com.rogerbleggi.calcard.service.mapper.PropostaMapper;
@@ -28,19 +32,23 @@ public class PropostaServiceImpl implements AnaliseCreditoService {
 	@Autowired
 	private PropostaRepository propostaRepository;
 
+	@Autowired
+	private ClienteService clienteService;
+
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Override
 	public PropostaDTO analiseCredito(ClienteDTO clienteDTO) {
-		return PropostaMapper.convertToPropostaDTO(propostaRepository.save(PropostaMapper.convertToProposta(analise(clienteDTO))));
+		return PropostaMapper.convertToPropostaDTO(
+				propostaRepository.saveAndFlush(PropostaMapper.convertToProposta(analise(clienteDTO))));
 	}
 
 	@Transactional(readOnly = true)
-	private PropostaDTO findByClienteId(Long clienteId) {
+	private PropostaDTO findByClienteCpf(String cpf) {
 		TypedQuery<Proposta> query = entityManager
-				.createQuery("select p from Proposta p where p.cliente.id = :clienteId", Proposta.class);
-		query.setParameter("clienteId", clienteId);
+				.createQuery("select p from Proposta p where p.cliente.cpf = :cpf", Proposta.class);
+		query.setParameter("cpf", cpf);
 		return PropostaMapper.convertToPropostaDTO(query.getSingleResult());
 	}
 
@@ -57,7 +65,12 @@ public class PropostaServiceImpl implements AnaliseCreditoService {
 		PropostaDTO propostaDTO = null;
 
 		try {
-			propostaDTO = findByClienteId(clienteDTO.getId());
+			List<ClienteDTO> filter = clienteService.filter(clienteDTO);
+			if (filter.isEmpty())
+				throw new NoSuchElementException();
+			else
+				clienteDTO = filter.get(0);
+			propostaDTO = findByClienteCpf(clienteDTO.getCpf());
 		} catch (NoResultException e) {
 			if (propostaDTO == null)
 				propostaDTO = new PropostaDTO();
@@ -124,7 +137,12 @@ public class PropostaServiceImpl implements AnaliseCreditoService {
 	private PropostaDTO analiseApenasPelosFilho(ClienteDTO clienteDTO, Integer renda, Integer dependentes) {
 		PropostaDTO propostaDTO = null;
 		try {
-			propostaDTO = findByClienteId(clienteDTO.getId());
+			List<ClienteDTO> filter = clienteService.filter(clienteDTO);
+			if (filter.isEmpty())
+				throw new NoSuchElementException();
+			else
+				clienteDTO = filter.get(0);
+			propostaDTO = findByClienteCpf(clienteDTO.getCpf());
 		} catch (NoResultException e) {
 			if (propostaDTO == null)
 				propostaDTO = new PropostaDTO();

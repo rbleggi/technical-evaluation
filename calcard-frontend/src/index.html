@@ -2,46 +2,34 @@
 <html lang="pt-br" ng-app="calcard">
 
 <head>
-
   <meta charset="utf-8" />
+  <!-- <base href="/"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="Description" content="Com o Cartão de Crédito Calcard VOCÊ QUER, VOCÊ PODE!">
-  <title>CALCARD</title>
+  <title>Calcard Administradora de Cartões é uma empresa sólida e inovadora no segmento de cartões.</title>
+  <link rel="shortcut icon" href="assets/img/favicon.ico">
+
   <!-- build:css -->
   <link href="assets/css/calcard.css" rel="stylesheet" />
   <!-- endbuild -->
-
 </head>
 
 <body ng-controller="CalcardController as vm">
 
-  <header>
+  <div class="calcard-container" ngCloak>
+    <ui-view class="calcard-header" name="header"></ui-view>
 
-    <nav class="navbar">
-      <div class="container">
+    <main class="flex-fill" role="main">
+      <ui-view name="main"></ui-view>
+    </main>
 
-        <a class="navbar-brand" href="#">CALCARD</a>
-
-      </div>
-    </nav>
-
-  </header>
-
-  <main role="main">
-
-    <a class="btn" href=""></a>
-
-  </main>
-
-  <footer>
-
-  </footer>
+    <ui-view class="calcard-footer" name="footer"></ui-view>
+  </div>
 
   <!-- build:js -->
   <script src="assets/js/calcard-lib.js"></script>
   <script src="assets/js/calcard.js"></script>
   <!-- endbuild -->
-
 </body>
 
 </html>

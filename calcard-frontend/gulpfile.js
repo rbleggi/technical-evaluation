@@ -22,6 +22,7 @@ gulp.task("build", function() {
     "jsBuild",
     "html",
     "fonts",
-    "images"
+    "images",
+    "files"
   );
 });

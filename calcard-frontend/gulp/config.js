@@ -2,6 +2,7 @@ var gulp = require("gulp");
 
 var path = {
   root: "./src",
+  dest: "./dist",
   html: {
     src: "./src/**/*.html",
     dest: "./dist"
@@ -21,7 +22,6 @@ var path = {
     glob: "./src/**/*.scss"
   },
   css: {
-    lib: [],
     dest: "./src/assets/css",
     destFile: "./src/assets/css/calcard.css",
     destConcat: "./src/assets/css/calcard.css",
@@ -29,13 +29,18 @@ var path = {
   },
   js: {
     main: [
-      "./src/calcard.module.js",
-      "./src/calcard.controller.js",
-      "./src/utils/*.js",
-      "./src/services/**/*.service.js",
-      "./src/components/**/*.component.js"
+      "./src/calcard.js",
+      "./src/calcardController.js",
+      "./src/calcardConfig.js",
+      "./src/services/**/*.js",
+      "./src/views/**/*.js",
+      "./src/components/**/*.js"
     ],
-    lib: ["./node_modules/angular/angular.js"],
+    lib: [
+      "./node_modules/angular/angular.js",
+      "./node_modules/@uirouter/angularjs/release/angular-ui-router.js",
+      "./node_modules/angular-input-masks/releases/angular-input-masks-standalone.js"
+    ],
     dest: "./src/assets/js",
     destConcat: [
       "./src/assets/js/calcard-lib.js",
@@ -43,6 +48,9 @@ var path = {
     ],
     destFile: "./src/assets/js/calcard.js",
     build: "./dist/assets/js"
+  },
+  files: {
+    sassdoc: "./sassdoc/**/*"
   }
 };
 

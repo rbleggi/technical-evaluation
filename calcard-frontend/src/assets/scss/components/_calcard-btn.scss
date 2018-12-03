@@ -1,0 +1,28 @@
+.calcard-btn {
+  background: $color-primary;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  color: $color-secondary;
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  &:hover {
+    background: $color-secondary;
+    color: $color-primary;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &--inverse {
+    background: $color-secondary;
+    color: $color-primary;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-secondary;
+    }
+  }
+}

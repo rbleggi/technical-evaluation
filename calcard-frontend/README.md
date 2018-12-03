@@ -1,4 +1,4 @@
-# Avaliação FrontEnd AngulasJS
+# Calcard
 
 Breve Descrição.
 
@@ -114,4 +114,4 @@ A aplicação usa o stylint para fazer o lint dos arquivos SASS e as seguintes c
 
 A aplicação usa o ESlint para fazer o lint dos arquivos javascript e as seguintes configurações são usadas:
 
-- **[eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)** baseado na configuração compartilhada do airbnb.
+- **[eslint-plugin-angular](https://www.npmjs.com/package/eslint-plugin-angular)** baseado no [guideline do John Papa](https://github.com/johnpapa/angular-styleguide/tree/master/a1).

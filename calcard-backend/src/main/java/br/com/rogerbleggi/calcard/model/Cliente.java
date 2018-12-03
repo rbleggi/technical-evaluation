@@ -38,8 +38,9 @@ public class Cliente implements Serializable {
 	@Column(name = "sexo")
 	private EnumSexo sexo;
 
+	@NotNull
 	@Enumerated(EnumType.STRING)
-	@Column(name = "estado_civil")
+	@Column(name = "estado_civil", nullable = false)
 	private EnumEstadoCivil estadoCivil;
 
 	@Column(name = "estado")

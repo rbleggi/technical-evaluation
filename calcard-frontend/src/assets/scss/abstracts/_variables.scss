@@ -2,9 +2,9 @@
 /// @type List
 $font-stack: ('Roboto', sans-serif) !default;
 
-/// Path dos assets da aplicação.
+/// Path das fontes da aplicação.
 /// @type String
-$assets-path: '../assets/' !default;
+$assets-path: '../../assets/fonts/' !default;
 
 /// Cor branca padrão.
 /// @type Color
@@ -22,10 +22,10 @@ $color-primary: #000 !default;
 /// @type Color
 $color-secondary: #bfbfbf !default;
 
-/// Cor cinza escura 1.
+/// Cor danger.
 /// @type Color
-$color-grey-dark-1: #666 !default;
+$color-danger: #dc3545 !default;
 
-/// Cor cinza clara 1.
-/// @type Color
-$color-grey-light-1: #999 !default;
+/// Radio button size.
+/// @type Length
+$radio-size: 1.5rem;

@@ -12,7 +12,8 @@ public class ClienteMapper {
 		cliente.setCpf(clienteDTO.getCpf());
 		cliente.setDependentes(clienteDTO.getDependentes());
 		cliente.setEstado(clienteDTO.getEstado());
-		cliente.setEstadoCivil(EnumEstadoCivil.valueOf(clienteDTO.getEstadoCivil()));
+		if (clienteDTO.getEstadoCivil() != null)
+			cliente.setEstadoCivil(EnumEstadoCivil.valueOf(clienteDTO.getEstadoCivil()));
 		cliente.setId(clienteDTO.getId());
 		cliente.setIdade(clienteDTO.getIdade());
 		cliente.setNome(clienteDTO.getNome());
@@ -27,7 +28,8 @@ public class ClienteMapper {
 		clienteDTO.setCpf(cliente.getCpf());
 		clienteDTO.setDependentes(cliente.getDependentes());
 		clienteDTO.setEstado(cliente.getEstado());
-		clienteDTO.setEstadoCivil(cliente.getEstadoCivil().toString());
+		if (cliente.getEstadoCivil() != null)
+			clienteDTO.setEstadoCivil(cliente.getEstadoCivil().toString());
 		clienteDTO.setId(cliente.getId());
 		clienteDTO.setIdade(cliente.getIdade());
 		clienteDTO.setNome(cliente.getNome());

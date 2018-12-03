@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.BeanUtils;
@@ -34,19 +35,24 @@ public class ClienteServiceImpl implements ClienteService {
 	@Transactional(readOnly = true)
 	public List<ClienteDTO> filter(ClienteDTO clienteDTO) {
 		if (clienteDTO != null) {
-			ExampleMatcher matcher = ExampleMatcher.matchingAll().withIgnoreNullValues().withIgnorePaths("id", "nome",
-					"idade", "sexo", "estado_civil", "estado", "qtd_Dependentes", "renda");
+			ExampleMatcher matcher = ExampleMatcher.matchingAll().withIgnoreNullValues();
 			return clienteRepository.findAll(Example.of(ClienteMapper.convertToCliente(clienteDTO), matcher)).stream()
 					.map(cliente -> ClienteMapper.convertToClienteDTO(cliente)).collect(Collectors.toList());
 		} else
 			return clienteRepository.findAll().stream().map(cliente -> ClienteMapper.convertToClienteDTO(cliente))
 					.collect(Collectors.toList());
-
 	}
 
 	@Override
 	public ClienteDTO save(ClienteDTO clienteDTO) {
-		return ClienteMapper.convertToClienteDTO(clienteRepository.saveAndFlush(ClienteMapper.convertToCliente(clienteDTO)));
+		try {
+			Cliente clienteBase = entityManager.createQuery("select c from Cliente c where c.cpf = :cpf", Cliente.class)
+					.setParameter("cpf", clienteDTO.getCpf()).getSingleResult();
+			return update(clienteDTO, clienteBase);
+		} catch (NoResultException e) {
+			return ClienteMapper
+					.convertToClienteDTO(clienteRepository.saveAndFlush(ClienteMapper.convertToCliente(clienteDTO)));
+		}
 	}
 
 	@Override
@@ -60,8 +66,12 @@ public class ClienteServiceImpl implements ClienteService {
 	public ClienteDTO update(Long id, ClienteDTO clienteDTO) {
 		Cliente clienteExistente = clienteRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Cliente", "id", id));
+		return update(clienteDTO, clienteExistente);
+	}
+
+	private ClienteDTO update(ClienteDTO clienteDTO, Cliente clienteExistente) {
 		Cliente clienteAtualizar = ClienteMapper.convertToCliente(clienteDTO);
-		BeanUtils.copyProperties(clienteAtualizar, clienteExistente);
+		BeanUtils.copyProperties(clienteAtualizar, clienteExistente,"id");
 		return ClienteMapper.convertToClienteDTO(clienteExistente);
 	}
 

@@ -1,0 +1,20 @@
+.calcard-header {
+  background: $color-primary;
+  padding: 1.5rem 0;
+
+  &__logo {
+    color: $color-secondary;
+    font-size: 3rem;
+    font-weight: 700;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  .calcard-btn {
+    &:hover {
+      border: 1px solid $color-secondary;
+    }
+  }
+}

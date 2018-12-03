@@ -1,12 +1,11 @@
 package br.com.rogerbleggi.calcard.controller;
 
-import javax.validation.Valid;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,8 +23,12 @@ public class AnaliseCreditoResource {
 	private AnaliseCreditoService analiseCreditoService;
 
 	@PostMapping
-	public @ResponseBody ResponseEntity<PropostaDTO> create(@RequestBody @Valid ClienteDTO clienteDTO) {
-		return ResponseEntity.ok(analiseCreditoService.analiseCredito(clienteDTO));
+	public @ResponseBody ResponseEntity<PropostaDTO> create(ClienteDTO clienteDTO) {
+		try {
+			return ResponseEntity.ok(analiseCreditoService.analiseCredito(clienteDTO));
+		} catch (NoSuchElementException e) {
+			return ResponseEntity.notFound().build();
+		}
 	}
 
 }

@@ -1,0 +1,15 @@
+.home {
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  padding: 3rem 1.5rem;
+  min-height: calc(100vh - (7.8rem + 5.4rem));
+
+  .calcard-form {
+    margin-top: 6rem;
+  }
+
+  .calcard-btn {
+    font-size: 2rem;
+  }
+}

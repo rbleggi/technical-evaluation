@@ -10,8 +10,6 @@
 
     init();
 
-    function init() {
-      console.log("aaaaaaaaa");
-    }
+    function init() {}
   }
 })();

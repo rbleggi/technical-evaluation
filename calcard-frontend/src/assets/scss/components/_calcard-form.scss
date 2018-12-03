@@ -1,0 +1,44 @@
+.calcard-form {
+  margin-bottom: 5rem;
+
+  input,
+  select {
+    border-color: $color-primary;
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+
+  label {
+    color: $color-primary;
+    font-size: 1.6rem;
+  }
+
+  small {
+    color: $color-danger;
+    font-size: 1.3rem;
+  }
+
+  .custom-control-label {
+    padding-left: $radio-size/2;
+
+    &::before {
+      top: $radio-size/3;
+      width: $radio-size;
+      height: $radio-size;
+    }
+
+    &::after {
+      top: $radio-size/3;
+      width: $radio-size;
+      height: $radio-size;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $color-primary;
+  }
+
+  .ng-invalid.ng-touched {
+    border-color: $color-danger;
+  }
+}

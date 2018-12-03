@@ -1,71 +1,43 @@
-# Avaliação Projeto Spring Boot
-
-Breve Descrição.
-
-## Índice
-
-- **[Instruções para execução](#instruções-para-execução)**
-- **[Avaliação Técnica](#avaliação-técnica)**
+# Avaliação Projeto Spring Boot e AngularJS
 
 ## Instruções para execução
 
-Caso não tenha a variavel de ambiente JAVA_HOME setada na maquina, editar o arquivo "setJAVA_HOME.bat" e alterar a seguinte instrução
-set PATH_JAVA_HOME=JDKDIR ex.: 
-set PATH_JAVA_HOME=C:\Program Files\Java\jdk1.8.0_181
-Após executar o arquivo com permissão de administrador
+Caso não tenha a variavel de ambiente `JAVA_HOME` setada na maquina, editar o arquivo `setJAVA_HOME.bat` e alterar a seguinte instrução
+- `set PATH_JAVA_HOME=JDKDIR ex.:` 
+- `set PATH_JAVA_HOME=C:\Program Files\Java\jdk1.8.0_181`
+- Após executar o arquivo com permissão de administrador
 
 Para rodar o programa siga alguma das opções
 
-Docker (Necessário Docker instaldo na maquina)
-- 1 - Executar o arquivo runCalcardDocker.bat
+1 - Docker (Necessário Docker instaldo na máquina)
+- Executar o arquivo `runCalcardDocker.bat`
 
-Ou rodar os seguintes comandos via prompt de comando ()
+Ou rodar os seguintes comandos via prompt de comando
 
-mvnw clean package
-docker build -t calcard-backend calcard-backend/.
-docker build -t calcard-frontend calcard-frontend/.
-docker run -d --name calcard-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=calcard postgres:9.4.5
-docker run -d -p 8080:8080 --name calcard-backend --link calcard-db:calcard-db calcard-backend
-docker run --name calcard-frontend -p 8082:80 --link calcard-backend:calcard-backend -d calcard-frontend
+- `mvnw clean package`
+- `docker build -t calcard-backend calcard-backend/.`
+- `docker build -t calcard-frontend calcard-frontend/.`
+- `docker run -d --name calcard-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=calcard postgres:9.4.5`
+- `docker run -d -p 8080:8080 --name calcard-backend --link calcard-db:calcard-db calcard-backend`
+- `docker run --name calcard-frontend -p 8082:80 --link calcard-backend:calcard-backend -d calcard-frontend`
 
-
+2 - Executar BackEnd e FrontEnd (Sem Docker)
 
 BackEnd
+- Executar o arquivo `runBackEnd.bat` para rodar o servidor rest
+- OU - Executar via cmd o comando ``mvn spring-boot:run`` para rodar o servidor rest
+- OU - Dentro do Eclipse, clicar no botão direito no arquivo ``CalcardApplication.java`` e após clicar em ``"Run As" -> "Java Application"``
 
+FrontEnd
+- Executar o arquivo runFrontEnd.bat para rodar o cliente angularjs
+- OU - Executar via cmd o comando ``npm install`` e após ``npm start`` para rodar o cliente angularjs
 
-
-- 1 - Executar o arquivo runBackEnd.bat para rodar o servidor rest
-- 2 - Executar via cmd o comando ``mvn spring-boot:run`` para rodar o servidor rest
-
-
-
-- 2 - Executar o arquivo runFrontEnd.bat para rodar o cliente angularjs
-Ou
-- 3 - Dentro do Eclipse, clicar no botão direito no arquivo ``CalcardApplication.java`` e após clicar em ``"Run As" -> "Java Application"``
-
-- 4 - Executar via cmd o comando ``npm install`` e após ``npm start`` para rodar o cliente angularjs
-- 5 - Docker
-
-# Build projeto
-mvnw clean package
-
-# Build imagens
-docker build -t calcard-backend calcard-backend/.
-docker build -t calcard-frontend calcard-frontend/.
-
-# Rodar containers
-docker run -d --name calcard-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=calcard postgres:9.4.5
-docker run -d -p 8080:8080 --name calcard-backend --link calcard-db:calcard-db calcard-backend
-docker run --name calcard-frontend -p 8082:80 --link calcard-backend:calcard-backend -d calcard-frontend
-
-# Rodar docker-compose para build e run
-
-Para rodar os testes siga alguma das opções
-1 - Clicar no botão direito no diretório src/test/java e após clicar em "Run As" -> "JUnit Test"
+Para rodar os testes
+- Clicar no botão direito no diretório `src/test/java` e após clicar em `"Run As" -> "JUnit Test"`
 
 ##Observações
-Foi utilizado a biblioteca SpringFox para gerar o Swagger da aplicação.
-Documentação do SpringFox -> http://springfox.github.io/springfox/
+- Foi utilizado a biblioteca SpringFox para gerar o Swagger da aplicação.
+- Documentação do SpringFox -> http://springfox.github.io/springfox/
 
 ## Avaliação Técnica
 
