@@ -43,7 +43,7 @@ As auditorias foram feitas utilizando o **[Google Lighthouse](https://developers
 
 ## Pré-requisitos
 
-- A última versão do **[Node.js](https://nodejs.org/en/)**.
+- A versão 8.12.0 do **[Node.js](https://nodejs.org/en/)**.
 
 ### Extensões VSCode
 
