@@ -5,5 +5,5 @@ COPY package.json /app
 RUN npm install
 COPY . /app
 RUN npm run build
-COPY /app/dist /usr/share/nginx/html
+COPY ./app/dist /usr/share/nginx/html
 EXPOSE 80
