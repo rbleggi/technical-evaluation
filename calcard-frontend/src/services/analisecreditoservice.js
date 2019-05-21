@@ -3,7 +3,7 @@ angular
   .factory("analisecreditoservice", analisecreditoservice);
 
 analisecreditoservice.$inject = ["$http"];
-var basePath = "http://localhost:8080/api/v1";
+var basePath = "http://praiadojeremias.sol.gabriela.br:10500/api/v1";
 
 function analisecreditoservice($http) {
   return {
